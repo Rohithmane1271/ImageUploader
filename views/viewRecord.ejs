@@ -1,0 +1,35 @@
+<%- include('headerPage') %>
+
+<!-- res.render("viewRecord" , {
+    x1:100,
+    x2:'hello'
+}); -->
+
+<%= x1%>
+<%= x2%>
+<%= dataFromdb%>
+
+
+<div class="container">
+    <h1 class="display-1">Results From Database</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- show ur records here from db -->
+            <% dataFromdb.forEach(function(xyz){  %>
+                <tr>
+                    <td><%= xyz.id%></td>
+                    <td><%= xyz.username%></td>
+                    <td><%= xyz.usermobile%></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
